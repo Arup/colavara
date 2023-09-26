@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Heading from './Heading';
+import avatar from './avatar.jpeg'
+const bool = false;
+
+function Example(props) {
+  return (
+    <h2>The value of the toggleBoolean prop is: {props.toggleBoolean.toString()}</h2>
+  );
+};
+
+function Avatar(){
+  const myPic = <img src={avatar} alt="altentop"/>
+  return myPic;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Heading firstName="Bob" />
+      <Heading firstName="Chopin" />
+      <Heading firstName="Vivaldi" />
+      <Example toggleBoolean={!bool}/>
+      <Avatar/>
     </div>
   );
 }
